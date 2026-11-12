@@ -48,7 +48,7 @@ I did not scan any office, home or public network, and no other target was teste
 | Scanner | Nmap and Zenmap 7.991 |
 | Footprinting tools | whois, nslookup, dig, whatweb, wafw00f 2.4.2, dnsrecon |
 
-![Nmap version](screenshots/07-nmap-version.png)
+![Nmap version](screenshots/07-nmap-version.png.png)
 
 ![Zenmap installed](screenshots/08-zenmap-installed.png)
 
@@ -62,7 +62,7 @@ Target: `scanme.nmap.org` (WHOIS was run on the parent domain `nmap.org`).
 
 Command: `whois nmap.org`
 
-![whois](screenshots/01-whois.png)
+![whois](screenshots/01-whois.png.png)
 
 Findings:
 - Registrar: Dynadot Inc (IANA ID 472)
@@ -75,7 +75,7 @@ Findings:
 
 Command: `nslookup scanme.nmap.org`
 
-![nslookup](screenshots/02-nslookup.png)
+![nslookup](screenshots/02-nslookup.png.png)
 
 Findings: DNS server 8.8.8.8 returned a non-authoritative answer. IPv4 address 45.33.32.156 and IPv6 address 2600:3c01::f03c:91ff:fe18:bb2f.
 
@@ -83,9 +83,9 @@ Findings: DNS server 8.8.8.8 returned a non-authoritative answer. IPv4 address 4
 
 Commands: `dig scanme.nmap.org ANY +noall +answer` and `dig scanme.nmap.org A`
 
-![dig ANY](screenshots/03a-dig-any.png)
+![dig ANY](screenshots/03-dig-any.png.png)
 
-![dig A](screenshots/03b-dig-a.png)
+![dig A](screenshots/03b-dig-a.png.png)
 
 Findings: status NOERROR, A record 45.33.32.156 and AAAA record 2600:3c01::f03c:91ff:fe18:bb2f. The full A query took 232 ms through 8.8.8.8.
 
@@ -93,7 +93,7 @@ Findings: status NOERROR, A record 45.33.32.156 and AAAA record 2600:3c01::f03c:
 
 Command: `whatweb scanme.nmap.org`
 
-![whatweb](screenshots/04-whatweb.png)
+![whatweb](screenshots/04-whatweb.png.png)
 
 Findings: HTTP 200 OK, web server Apache 2.4.7 on Ubuntu Linux, page title "Go ahead and ScanMe!", HTML5 and Google Analytics detected, IP 45.33.32.156. HTTPS (port 443) was refused, so WhatWeb fell back to HTTP.
 
@@ -101,7 +101,7 @@ Findings: HTTP 200 OK, web server Apache 2.4.7 on Ubuntu Linux, page title "Go a
 
 Command: `wafw00f http://scanme.nmap.org`
 
-![wafw00f](screenshots/05-wafw00f.png)
+![wafw00f](screenshots/05-wafw00f.png.png)
 
 Findings: no Web Application Firewall was detected by the generic detection (7 requests).
 
@@ -109,7 +109,7 @@ Findings: no Web Application Firewall was detected by the generic detection (7 r
 
 Command: `dnsrecon -d scanme.nmap.org`
 
-![dnsrecon](screenshots/06-dnsrecon.png)
+![dnsrecon](screenshots/06-dnsrecon.png.png)
 
 Findings: A record 45.33.32.156 and AAAA record 2600:3c01::f03c:91ff:fe18:bb2f. No DNSSEC answer and no SRV records were found (the two ERROR lines only mean these records do not exist).
 
@@ -156,7 +156,7 @@ The topology shows my Kali VM (10.0.0.2) and the gateway (10.0.0.1) one hop apar
 
 Command: `nmap scanme.nmap.org` (Regular scan)
 
-![scanme output](screenshots/15-scanme-output.png)
+![scanme output](screenshots/15-scanme-output.png.png)
 
 ![scanme ports](screenshots/16-scanme-ports.png)
 
